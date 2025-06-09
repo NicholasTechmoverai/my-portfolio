@@ -4,7 +4,7 @@ import ProgressCircle from "./ProgressCircle.vue";
 
 </script>
 <template>
-  <div class="w-[100] p-4 text-white">
+  <div class="w-[100%] lg:w-[800px] p-4 text-white">
     <div
       class="p-3 bg-primary mt-10 border-2 border-gray-200 dark:border-gray-500 text-white rounded-lg"
     >

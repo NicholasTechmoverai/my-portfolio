@@ -60,7 +60,8 @@ const scrollToTop = () => {
                 class="fa fa-twitter bg-[#1DA1F2] p-2 rounded-full hover:scale-110 transform transition-all duration-300 hover:shadow-lg hover:shadow-[#1DA1F2]/30"
                 target="_blank" rel="noopener noreferrer"></a>
             </div>
-            <img @click="$router.push('/')" :src="icon" alt="icon" class="icon-hover transition duration-100 cursor-pointer size-[100px]" />
+            <img @click="$router.push('/')" :src="icon" alt="icon"
+              class="icon-hover transition duration-100 cursor-pointer size-[100px]" />
           </div>
 
           <!-- Contact Info -->
@@ -92,14 +93,18 @@ const scrollToTop = () => {
             <h4 class="text-xl font-bold text-white border-b border-green-500 pb-2 animate-slide-in-right">
               Quick Links
             </h4>
-            <div class="flex flex-col gap-2 mt-2 text-sm animate-fade-in" style="animation-delay: 0.3s">
-              <a href="/" class="hover:text-green-400 transition-colors hover:pl-2">Home</a>
-              <a href="/contact-me" class="hover:text-green-400 transition-colors hover:pl-2">contact me</a>
-              <a href="/skills" class="hover:text-green-400 transition-colors hover:pl-2">Skills</a>
-              <a href="/projects" class="hover:text-green-400 transition-colors hover:pl-2">Projects</a>
-              <a href="/gallery" class="hover:text-green-400 transition-colors hover:pl-2">Gallery</a>
-              <a href="/about" class="hover:text-green-400 transition-colors hover:pl-2">About</a>
-            </div>
+              <div class="flex flex-col gap-2 mt-2 text-sm animate-fade-in" style="animation-delay: 0.3s">
+                <router-link to="/" class="hover:text-green-400 transition-colors hover:pl-2">Home</router-link>
+                <router-link to="/contact-me" class="hover:text-green-400 transition-colors hover:pl-2">Contact
+                  Me</router-link>
+                <router-link to="/skills" class="hover:text-green-400 transition-colors hover:pl-2">Skills</router-link>
+                <router-link to="/projects"
+                  class="hover:text-green-400 transition-colors hover:pl-2">Projects</router-link>
+                <router-link to="/gallery"
+                  class="hover:text-green-400 transition-colors hover:pl-2">Gallery</router-link>
+                <router-link to="/about" class="hover:text-green-400 transition-colors hover:pl-2">About</router-link>
+              </div>
+
           </div>
 
           <!-- Founded -->
@@ -177,6 +182,7 @@ const scrollToTop = () => {
   transition: all 2s ease;
   filter: drop-shadow(0 0 3px rgba(255, 166, 0, 0.952));
 }
+
 @keyframes slide-in-left {
   from {
     transform: translateX(-20px);

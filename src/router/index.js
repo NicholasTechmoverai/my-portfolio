@@ -31,7 +31,7 @@ const routes = [
     name: 'Gallery',
     component: GalleryPage,
   },  {
-    path: '/contact_me',
+    path: '/contact-me',
     name: 'Contact',
     component: ContactPage,
   }

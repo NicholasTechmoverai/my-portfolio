@@ -1,5 +1,6 @@
 <script setup>
 import NavBar from './components/NavBar.vue';
+import icon from './assets/pxt1s38v.png'
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -34,6 +35,7 @@ const scrollToTop = () => {
          `"></div>
       </div>
 
+
       <div class="flex flex-col md:flex-row gap-10 w-full relative z-10">
 
         <!-- About Me & Contact Info -->
@@ -58,6 +60,7 @@ const scrollToTop = () => {
                 class="fa fa-twitter bg-[#1DA1F2] p-2 rounded-full hover:scale-110 transform transition-all duration-300 hover:shadow-lg hover:shadow-[#1DA1F2]/30"
                 target="_blank" rel="noopener noreferrer"></a>
             </div>
+            <img @click="$router.push('/')" :src="icon" alt="icon" class="icon-hover transition duration-100 cursor-pointer size-[100px]" />
           </div>
 
           <!-- Contact Info -->
@@ -91,6 +94,7 @@ const scrollToTop = () => {
             </h4>
             <div class="flex flex-col gap-2 mt-2 text-sm animate-fade-in" style="animation-delay: 0.3s">
               <a href="/" class="hover:text-green-400 transition-colors hover:pl-2">Home</a>
+              <a href="/contact-me" class="hover:text-green-400 transition-colors hover:pl-2">contact me</a>
               <a href="/skills" class="hover:text-green-400 transition-colors hover:pl-2">Skills</a>
               <a href="/projects" class="hover:text-green-400 transition-colors hover:pl-2">Projects</a>
               <a href="/gallery" class="hover:text-green-400 transition-colors hover:pl-2">Gallery</a>
@@ -169,6 +173,10 @@ const scrollToTop = () => {
 </template>
 
 <style>
+.icon-hover:hover {
+  transition: all 2s ease;
+  filter: drop-shadow(0 0 3px rgba(255, 166, 0, 0.952));
+}
 @keyframes slide-in-left {
   from {
     transform: translateX(-20px);

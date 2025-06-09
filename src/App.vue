@@ -15,7 +15,7 @@ const scrollToTop = () => {
   <NavBar />
   <div class="bg-gradient-to-br from-[#11161cfe] to-[#232224] min-h-[100vh] w-full flex flex-col items-center relative">
     <img class="fixed top-0 left-0 w-full h-full object-cover opacity-10 z-0 pointer-events-none"
-      src="./assets/5873853ff3a71010b5e8ef3e.png" alt="" />
+      src="./assets/bck.jpg" alt="" />
     <router-view />
     <footer class="relative flex flex-col gap-10 bg-[#2c3e50] w-full px-4 py-10 text-white overflow-hidden">
       <!-- Animated background elements -->

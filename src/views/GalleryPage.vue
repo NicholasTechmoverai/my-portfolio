@@ -1,282 +1,221 @@
 <template>
-  <div></div>
-  <div class="max-w-[1024px]">
-    <div
-      class="p-3 bg-primary mt-10 mx-3 border-2 border-gray-200 dark:border-gray-500 text-white rounded-lg"
-    >
-      @gathogo 4k gallery
+  <div class="max-w-[1024px] z-40 mx-auto">
+    <!-- Animated Header -->
+    <div class="p-3 bg-gradient-to-r from-purple-600 to-blue-500 mt-10 mx-3 border-2 border-white/20 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 group">
+      <h2 class="text-2xl font-bold text-center animate-text bg-gradient-to-r from-white via-amber-200 to-white bg-clip-text text-transparent">
+        @gathogo's <span class="inline-block group-hover:rotate-12 transition-transform">✨</span> 4K Gallery <span class="inline-block group-hover:-rotate-12 transition-transform">✨</span>
+      </h2>
+      <p class="text-center text-sm opacity-90 mt-1">Hover to explore the magic</p>
     </div>
-    <div class="columns-2 sm:columns-2 md:columns-4 gap-2 p-4 min-h-screen w-100%">
-      <!-- Masonry Item -->
+
+    <!-- Masonry Grid with Parallax Effect -->
+    <div class="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-4 p-4 min-h-screen w-full relative">
+      <!-- Floating Decorative Elements -->
+      <div class="absolute -top-20 -left-20 w-40 h-40 bg-purple-500/10 rounded-full blur-xl"></div>
+      <div class="absolute -bottom-20 -right-20 w-60 h-60 bg-blue-500/10 rounded-full blur-xl"></div>
+      
+      <!-- Masonry Items with Advanced Effects -->
       <div
         v-for="(t_img, index) in images"
         :key="index"
         tabindex="0"
-        class="mb-2 break-inside-avoid overflow-hidden cursor-pointer rounded-2xl border border-gray-600 group focus:outline-none relative"
+        class="mb-4 break-inside-avoid overflow-hidden cursor-pointer rounded-2xl border border-white/20 group focus:outline-none relative transform hover:-translate-y-2 transition-all duration-500 shadow-lg hover:shadow-xl"
+        :style="{
+          'transition-delay': `${index * 50}ms`,
+          'box-shadow': '0 10px 30px -5px rgba(0,0,0,0.3)'
+        }"
       >
-        <img
-          :src="t_img.img"
-          alt=""
-          class="w-full h-auto object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 group-focus:scale-110 group-active:scale-110 bg-fixed"
-        />
+        <!-- Image with Parallax and Glow Effect -->
+        <div class="relative overflow-hidden h-full w-full">
+          <img
+            :src="t_img.img"
+            :alt="t_img.title"
+            class="w-full h-auto object-cover transition-all duration-700 ease-out group-hover:scale-110 group-focus:scale-110 group-active:scale-110"
+            :style="{
+              'transform': 'translateZ(0)',
+              'backface-visibility': 'hidden',
+              'will-change': 'transform'
+            }"
+          />
+          
+          <!-- Animated Gradient Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-80 group-hover:opacity-0 transition-opacity duration-500"></div>
+          
+          <!-- Floating Particles Background -->
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div 
+              v-for="i in 15" 
+              :key="`particle-${i}`"
+              class="absolute rounded-full bg-white/20"
+              :style="{
+                width: `${Math.random() * 6 + 2}px`,
+                height: `${Math.random() * 6 + 2}px`,
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animation: `float ${Math.random() * 5 + 3}s infinite ease-in-out ${Math.random() * 2}s`,
+                opacity: Math.random() * 0.5 + 0.1
+              }"
+            ></div>
+          </div>
+        </div>
 
-        <div
-          class="absolute top-0 left-0 w-full h-full bg-black/60 z-20 transition-all duration-500 group-hover:bg-transparent group-focus:bg-transparent group-active:bg-transparent"
-        ></div>
-
-        <div
-          class="absolute bottom-0 inset-0 flex flex-col items-center justify-center z-30 opacity-0 group-hover:opacity-90 group-focus:opacity-90 group-active:opacity-90 transition-opacity duration-500 text-white text-center p-2"
-        >
-          <h2 class="mt-[auto] text-2xl font-bold">{{ t_img.title }}</h2>
-          <p class="text-sm text-gray-300">{{ t_img.description }}</p>
+        <!-- Content Reveal Animation -->
+        <div class="absolute inset-0 flex flex-col items-center justify-end z-30 p-6 pointer-events-none">
+          <div class="transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 transition-all duration-500 ease-out delay-150">
+            <h2 class="text-2xl font-bold text-white drop-shadow-lg">{{ t_img.title }}</h2>
+            <p class="text-sm text-white/90 mt-2 drop-shadow-md">{{ t_img.description }}</p>
+          </div>
+          
+          <!-- Animated Button -->
+          <button 
+          @click="viewImage(t_img.id)"
+            class="mt-4 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white text-sm font-medium transform scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 ease-out delay-300 hover:bg-white/20 hover:border-white/30 pointer-events-auto"
+          >
+            View Details
+          </button>
         </div>
       </div>
     </div>
 
-    <section>
-      <img
-        src="https://images.unsplash.com/photo-1607743386760-88ac62b89b8a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt=""
-      />
-      <article>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </article>
-      <!-- <div class="relative w-[50%]">
-        <div class="gallery">
-          <img src="https://assets.codepen.io/1506195/unsplash-1.jpg" alt="" />
-          <img src="https://assets.codepen.io/1506195/unsplash-7.jpg" alt="" />
-          <img src="https://assets.codepen.io/1506195/unsplash-3.jpg" alt="" />
-          <img src="https://assets.codepen.io/1506195/unsplash-2.jpg" alt="" />
-          <img src="https://assets.codepen.io/1506195/unsplash-6.jpg" alt="" />
-          <img src="https://assets.codepen.io/1506195/unsplash-0.jpg" alt="" />
-          <img src="https://assets.codepen.io/1506195/unsplash-8.jpg" alt="" />
+    <!-- Featured Image Section with Advanced Animation -->
+    <section class="relative w-full h-[80vh] overflow-hidden mt-12 rounded-3xl mx-3 border border-white/20">
+      <!-- Background Image with Parallax -->
+      <div class="absolute inset-0 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1607743386760-88ac62b89b8a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Featured"
+          class="w-full h-full object-cover transform scale-110 hover:scale-100 transition-transform duration-10000 ease-out"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+      </div>
+      
+      <!-- Floating Grid Overlay -->
+      <article class="absolute inset-0 mix-blend-overlay pointer-events-none">
+        <div class="grid grid-cols-12 grid-rows-6 h-full w-full gap-1 opacity-50">
+          <div 
+            v-for="i in 72" 
+            :key="`grid-${i}`"
+            class="border border-white/10 hover:bg-white/20 transition-all duration-300"
+            :class="{
+              'col-span-2': i % 5 === 0,
+              'row-span-2': i % 7 === 0,
+              'bg-white/5': i % 3 === 0
+            }"
+          ></div>
         </div>
-      </div> -->
+      </article>
+      
+      <!-- Featured Content -->
+      <div class="relative z-10 h-full flex flex-col justify-end p-8 text-white">
+        <h3 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Featured Work</h3>
+        <p class="text-lg md:text-xl max-w-2xl mb-6 animate-fade-in-up delay-100">
+          A showcase of my finest visual creations, captured in stunning 4K resolution.
+        </p>
+        <div class="flex gap-4 animate-fade-in-up delay-200">
+          <button class="px-6 py-3 bg-white text-black rounded-full font-medium hover:bg-gray-100 transition-colors">
+            View Portfolio
+          </button>
+          <button class="px-6 py-3 border border-white rounded-full font-medium hover:bg-white/10 transition-colors">
+            Contact Me
+          </button>
+        </div>
+      </div>
     </section>
   </div>
+      <router-view class="fixed z-50"></router-view> 
+
 </template>
+
 <script setup>
-// images array
-const images = [
-  {
-    img:
-      "https://images.unsplash.com/photo-1745690665873-b5239161c17b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8",
-    title: "...",
-    description: "Fearless, powerful, and born to lead — the spirit of a true lion.",
-  },
-  // {
-  //   img: "src/assets/karuki_Nicholas_GREAT.jpg",
-  //   title: "Critical Thinking Master",
-  //   description:
-  //     "Seeing beyond the obvious. Crafting solutions where others see challenges.",
-  // },
-  {
-    img: "src/assets/injustify_HIM.jpg",
-    title: "...",
-    description: "Rooted in humility, driven by silent strength and action.",
-  },
-  // {
-  //   img: "src/assets/WhatsApp Image 2025-04-22 at 10.36.09_801e5b4b.jpg",
-  //   title: "Collaboration in Motion",
-  //   description: "Success is built when great minds come together with purpose.",
-  // },
-  {
-    img: "src/assets/WhatsApp Image 2025-04-22 at 10.34.10_086f6a1c.jpg",
-    title: "...",
-    description: "Leading not by force, but by inspiring trust, vision, and unity.",
-  },
-  // {
-  //   img: "src/assets/WhatsApp Image 2025-04-22 at 10.36.29_93ad5106.jpg",
-  //   title: "The Calm Creator",
-  //   description: "In a world of noise, the chill ones create the loudest impact.",
-  // },
-  {
-    img: "src/assets/WhatsApp Image 2025-04-22 at 10.33.20_3167e298.jpg",
-    title: "Eager to Learn, Ready to Soar",
-    description: "A relentless spirit always chasing growth, wisdom, and new heights.",
-  },
-];
+import { useRouter } from 'vue-router'
+import images from '../items'
+const router = useRouter()
+
+const viewImage = (id) => {
+  router.push({ path: '/gallery/view', query: { v: id } })
+}
 </script>
+
 <style scoped>
-section {
-  width: 100%;
-  height: 200px;
-  margin: 0 auto;
-  line-height: 0;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-section img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-section article {
-  position: absolute;
-  top: 0;
-  width: 70%;
-  background: gray;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 5px;
-  mix-blend-mode: lighten;
-}
-section div {
-  background: black;
-  height: 100px;
-}
-section div:nth-of-type(2) {
-  grid-column: 2 / 4;
-}
-
+/* Base Styles */
 body {
-  background: #eee;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
 }
 
-.gallery {
-  --size: min(60vmin, 400px);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 10px #0002, 0 20px 40px -20px #0004;
-  width: var(--size);
-  height: var(--size);
-  background: #fff;
-  border: 6px solid #fff;
-  display: grid;
-  grid-template-rows: 50% 50%;
-  grid-template-columns: 1fr 1fr;
-  overflow: hidden;
-  gap: 6px;
-}
-
-.gallery img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@keyframes moveHorizontal {
-  to {
-    object-position: 100% 0;
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
   }
 }
 
-@keyframes moveVertical {
-  to {
-    object-position: 0 100%;
+@keyframes animate-text {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
   }
 }
 
-@keyframes shrinkVertical {
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
-    height: 0;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@keyframes shrinkHorizontal {
-  to {
-    width: 0;
+.animate-text {
+  background-size: 300% 300%;
+  animation: animate-text 6s ease infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .columns-2 {
+    columns: 1 !important;
   }
-}
-
-@keyframes growHorizontal {
-  to {
-    width: 100%;
+  
+  section {
+    height: 60vh;
   }
-}
-@keyframes growHorizontal2 {
-  to {
-    width: 70%;
-  }
-}
-
-@keyframes growVertical {
-  to {
-    height: 100%;
-  }
-}
-
-@keyframes growAll {
-  to {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.gallery img:nth-child(1) {
-  grid-column: 1;
-  grid-row: 1;
-  justify-self: end;
-  animation: moveHorizontal 8.5s 0.5s 1, shrinkHorizontal 2s 9s ease-in 1;
-  animation-fill-mode: forwards;
-}
-
-.gallery img:nth-child(2) {
-  grid-column: 2;
-  grid-row: 1;
-  justify-self: end;
-  animation: shrinkHorizontal 2s 11s 1;
-  animation-fill-mode: forwards;
-}
-
-.gallery img:nth-child(3) {
-  grid-row: 2;
-  grid-column: 1 / 3;
-  align-self: end;
-  object-position: 0 0;
-  animation: moveVertical 5s 1s 1, shrinkVertical 3s 5s 1;
-  animation-fill-mode: forwards;
-}
-
-.gallery img:nth-child(4) {
-  grid-column: 1 / 3;
-  grid-row: 1;
-  width: 0;
-  justify-self: center;
-  align-self: start;
-  animation: growHorizontal 2.25s 11s 1, moveHorizontal 4s 14s 1, shrinkVertical 2s 18s 1;
-  animation-fill-mode: forwards;
-}
-
-.gallery img:nth-child(5) {
-  grid-column: 1;
-  grid-row: 2;
-  width: 0;
-  justify-self: start;
-  align-self: end;
-  animation: growHorizontal 2.5s 7.5s 1, moveVertical 4s 12.5s 1,
-    shrinkHorizontal 2s 17s 1;
-  animation-fill-mode: forwards;
-}
-
-.gallery img:nth-child(6) {
-  grid-column: 2;
-  grid-row: 2;
-  width: 0;
-  justify-self: end;
-  align-self: end;
-  animation: growHorizontal 2s 8s 1, shrinkHorizontal 2s 17s 1;
-  animation-fill-mode: forwards;
-}
-
-.gallery img:nth-child(7) {
-  grid-column: 1/3;
-  grid-row: 1/3;
-  width: 0;
-  justify-self: end;
-  align-self: end;
-  object-position: 0 0;
-  animation: growHorizontal 2s 20s 1, moveHorizontal 16s 21.5s 1;
-  animation-fill-mode: forwards;
 }
 </style>

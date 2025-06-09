@@ -4,6 +4,7 @@ import MainPage from '../views/MainPage.vue'
 import ProjectsPage from '../views/ProjectsPage.vue'
 import AboutPage from '../views/AboutPage.vue'
 import GalleryPage from '../views/GalleryPage.vue'
+import ImageView from '../views/ImageView.vue'
 import ContactPage from '../views/ContactPage.vue'
 const routes = [
     {
@@ -30,7 +31,11 @@ const routes = [
     path: '/gallery',
     name: 'Gallery',
     component: GalleryPage,
-  },  {
+        children: [
+      { path: 'view', name: 'ImageView', component: ImageView }, 
+    ]
+  }, 
+   {
     path: '/contact-me',
     name: 'Contact',
     component: ContactPage,

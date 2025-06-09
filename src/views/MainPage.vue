@@ -81,8 +81,8 @@ onMounted(() => {
       <div class="relative flex flex-col items-center md:rotate-[-90deg]">
         <!-- Profile Image -->
         <img
-          class="border border-gray-600 w-[230px] h-[230px] rounded-[2rem] absolute top-29 left-1/2 transform -translate-x-1/2 z-20 md:rotate-[90deg] lg:top-41"
-          src="../assets/user_e3913a82-9ee5-4e8f-971b-be6634178b60.png" alt="User Avatar" />
+          class="border border-gray-600 w-[230px] h-[230px] object-cover rounded-[2rem] absolute top-29 left-1/2 transform -translate-x-1/2 z-20 md:rotate-[90deg] lg:top-41"
+          src="../assets/image.png" alt="User Avatar" />
 
         <!-- Main Card -->
         <div
@@ -185,78 +185,49 @@ onMounted(() => {
     </div>
   </div>
 
-  <div class="container">
-    <div class="flip-panel">
-      <div class="flip-card flip-front">
-        <div class="flip-face face1">
-          <h2></h2>
-        </div>
-        <div class="flip-face face2">
-          <h2></h2>
-        </div>
-      </div>
-      <div class="flip-card flip-back">
-        <div class="flip-face face1">
-          <h2>TRANSITION</h2>
-        </div>
-        <div class="flip-face face2">
-          <h2>TRANSITION</h2>
-        </div>
-      </div>
+<div class="hover-card-container">
+  <div class="hover-card-wrapper">
+    <div class="hover-card hover-card-top">
+      <div class="hover-card-side hover-card-side1"><h2></h2></div>
+      <div class="hover-card-side hover-card-side2"><h2></h2></div>
+    </div>
+    <div class="hover-card hover-card-main">
+      <div class="hover-card-side hover-card-side1"><h2>TRANSITION</h2></div>
+      <div class="hover-card-side hover-card-side2"><h2>TRANSITION</h2></div>
     </div>
   </div>
+</div>
 </template>
 <style scoped>
-.container {
-  margin-top: 20px;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flip-panel {
+.hover-card-wrapper {
   cursor: pointer;
   position: relative;
-  max-width: 450px;
-  width: 100%;
+  width: 500px;
   height: 350px;
   box-shadow: 0px 30px 40px -25px rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  background-color: aquamarine;
-  align-items: center;
 }
-
-.flip-panel:hover .flip-front .flip-face {
+.hover-card-wrapper:hover .hover-card-top .hover-card-side {
   transform: rotateX(0deg);
 }
-
-.flip-panel:hover .flip-front .flip-face:after {
+.hover-card-wrapper:hover .hover-card-top .hover-card-side:after {
   opacity: 0;
   transition-delay: 0.2s;
 }
-
-.flip-panel:hover .flip-back .flip-face:after {
+.hover-card-wrapper:hover .hover-card-main .hover-card-side:after {
   opacity: 1;
 }
-
-.flip-panel:hover .flip-back .face2 {
+.hover-card-wrapper:hover .hover-card-main .hover-card-side2 {
   transform: rotateY(-90deg) translateX(250px);
 }
-
-.flip-panel:hover .flip-back .face1 {
+.hover-card-wrapper:hover .hover-card-main .hover-card-side1 {
   transform: rotateY(-90deg) translateX(-250px);
 }
 
-.flip-card {
+.hover-card {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 500px;
   height: 350px;
   transition: 0.5s linear all;
   display: flex;
@@ -265,10 +236,9 @@ onMounted(() => {
   font-size: 50px;
   background-size: 500px 350px;
 }
-
-.flip-card h2 {
-  color: white;
-  font-family: sans-serif;
+.hover-card h2 {
+  color: rgb(88, 85, 85);
+  font-family: monospace;
   width: 200%;
   height: 100%;
   display: flex;
@@ -276,7 +246,7 @@ onMounted(() => {
   justify-content: center;
 }
 
-.flip-card .flip-face {
+.hover-card .hover-card-side {
   overflow: hidden;
   position: relative;
   width: 250px;
@@ -285,8 +255,7 @@ onMounted(() => {
   transition: 0.5s linear transform;
   transition: 1s cubic-bezier(0.5, -0.03, 0.58, 1.08) transform;
 }
-
-.flip-card .flip-face:after {
+.hover-card .hover-card-side:after {
   content: "";
   position: absolute;
   top: 0;
@@ -295,78 +264,57 @@ onMounted(() => {
   height: 100%;
   transition: 1s cubic-bezier(0.5, -0.03, 0.58, 1.08) opacity;
 }
-
-.flip-card .face1 {
+.hover-card .hover-card-side1 {
   background-position: 0% 0%;
 }
-
-.flip-card .face2 {
+.hover-card .hover-card-side2 {
   background-position: 100% 0;
 }
-
-.flip-card .face2 h2 {
+.hover-card .hover-card-side2 h2 {
   transform: translateX(-50%);
 }
 
-.flip-card.flip-back {
+.hover-card.hover-card-main {
   transform-origin: bottom;
 }
+.hover-card.hover-card-main .hover-card-side {
+  background-image: url(../assets/1st-computer.png);
 
-.flip-card.flip-back .flip-face {
-  background-image: url(https://images.unsplash.com/photo-1642083139428-9ee5fa423c46?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
-
-.flip-card.flip-back .face1 {
+.hover-card.hover-card-main .hover-card-side1 {
   transform-origin: left;
 }
-
-.flip-card.flip-back .face2 {
+.hover-card.hover-card-main .hover-card-side2 {
   transform-origin: right;
 }
-
-.flip-card.flip-back .flip-face:after {
+.hover-card.hover-card-main .hover-card-side:after {
   opacity: 0;
 }
-
-.flip-card.flip-back .face1:after {
+.hover-card.hover-card-main .hover-card-side1:after {
   background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
 }
-
-.flip-card.flip-back .face2:after {
+.hover-card.hover-card-main .hover-card-side2:after {
   background: linear-gradient(to left, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
 }
 
-.flip-card.flip-front {
+.hover-card.hover-card-top {
   transform-origin: bottom;
 }
-
-.flip-card.flip-front .face1 {
+.hover-card.hover-card-top .hover-card-side1 {
   transform-origin: right;
   transform: rotateY(-90deg) translateX(-250px);
 }
-
-.flip-card.flip-front .face1:after {
+.hover-card.hover-card-top .hover-card-side1:after {
   background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
 }
-
-.flip-card.flip-front .face2 {
+.hover-card.hover-card-top .hover-card-side2 {
   transform-origin: left;
   transform: rotateY(-90deg) translateX(-250px);
 }
-
-.flip-card.flip-front .face2:after {
+.hover-card.hover-card-top .hover-card-side2:after {
   background: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
 }
-
-.flip-card.flip-front .flip-face {
-  background-image: url(https://images.unsplash.com/photo-1599837487527-e009248aa71b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+.hover-card.hover-card-top .hover-card-side {
+  background-image: url(../assets/2nd-computer.png);
 }
 </style>

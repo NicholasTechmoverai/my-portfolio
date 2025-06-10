@@ -4,43 +4,24 @@ export default {
 
 
     const models = [
-  {
-    name: "Academic Background",
-    description: "Graduated with a BSc in Computer Science, specializing in Machine Learning. Took deep interest in AI applications for local languages, contributing to a research project on Swahili NLP."
-  },
-  {
-    name: "Hands-On Problem Solver",
-    description: "Known for building practical, working solutions under tight constraints. Frequently prototype tools from scratch — whether for backend APIs, admin dashboards, or streaming interfaces."
-  },
-  {
-    name: "Full-Stack Developer",
-    description: "Comfortable across the stack with Vue.js,Nuxt.js and TailwindCss on the frontend and FastAPI/Tortoise ORM on the backend. Skilled in REST APIs, WebSockets, and relational data modeling."
-  },
-  {
-    name: "System Thinker",
-    description: "Able to design modular and scalable systems by breaking down complex problems into maintainable components — demonstrated across real estate, music, and admin management apps."
-  },
-  {
-    name: "Consistent Self-Learner",
-    description: "Quick to adopt new technologies and tools. Independently mastered Vue 3, Tortoise ORM, and SQLAdmin through project-driven learning."
-  },
-  {
-    name: "Strong Communicator",
-    description: "Effectively explains technical concepts and writes clean, maintainable code with clear documentation. Experienced in mentoring peers and improving collaboration on group projects."
-  },
-  {
-    name: "Open Source Enthusiast",
-    description: "Engaged with the global dev community through open-source. Participated in code reviews, bug hunting, and documentation contributions, especially in African tech ecosystems."
-  },
-  {
-    name: "Educational Foundations",
-    description: "Built a strong base in core CS subjects — including subnetting, calculus, and assembly — reinforcing problem-solving skills applicable to both software and systems design."
-  },
-  // {
-  //   name: "Current Focus",
-  //   description: "Currently working on combining all personal tools and learnings into a unified developer platform to streamline productivity and simplify project scaffolding."
-  // }
-];
+      {
+        name: "Who AM I",
+        description: "Born on Earth in 2003,"
+      },
+      {
+        name: "highschool Background",
+        description: "Alumni Lanet secondary school"
+      },
+      {
+        name: "Academic Background",
+        description: "About to Graduate(d) with a BSc in Computer Science, specializing in Machine Learning."
+      },
+      {
+        name: "proffesion Background",
+        description: "A passionate and experienced programmer on frontend and web application development alongside with python in the backend."
+      },
+
+    ];
 
 
     const list = document.getElementById("card-list");
@@ -143,13 +124,10 @@ export default {
     <div class="mask">
       <div class="w-[100px]" :key="svgKey" v-html="animateSvg"></div>
 
-      <div
-        class="bg-white/60 backdrop-blur-md rounded-2xl shadow-2xl p-6 mx-auto mt-[300px] space-y-4"
-      >
+      <div class="bg-white/60 backdrop-blur-md rounded-2xl shadow-2xl p-6 mx-auto mt-[300px] space-y-4">
         <div class="flex items-center space-x-4">
           <div
-            class="w-16 h-16 rounded-full bg-indigo-500 text-white flex items-center justify-center text-2xl font-bold shadow-md"
-          >
+            class="w-16 h-16 rounded-full bg-indigo-500 text-white flex items-center justify-center text-2xl font-bold shadow-md">
             KN
           </div>
           <div>
@@ -175,7 +153,9 @@ export default {
           </p>
           <p>
             <i class="fas fa-map-marker-alt text-indigo-500 mr-2"></i>
-            Location: <span class="font-medium decoration-1 underline"><a href="https://www.google.com/maps/place/Murang'a+University+Science+Complex/@-0.7153685,37.145965,766m/data=!3m2!1e3!4b1!4m6!3m5!1s0x182899575e99b9db:0xf6c1f55e96094abf!8m2!3d-0.7153685!4d37.1485399!16s%2Fg%2F11v9vthdst?entry=ttu&g_ep=EgoyMDI1MDYwMi4wIKXMDSoASAFQAw%3D%3D">Murang'a, Kenya</a></span>
+            Location: <span class="font-medium decoration-1 underline"><a
+                href="https://www.google.com/maps/place/Murang'a+University+Science+Complex/@-0.7153685,37.145965,766m/data=!3m2!1e3!4b1!4m6!3m5!1s0x182899575e99b9db:0xf6c1f55e96094abf!8m2!3d-0.7153685!4d37.1485399!16s%2Fg%2F11v9vthdst?entry=ttu&g_ep=EgoyMDI1MDYwMi4wIKXMDSoASAFQAw%3D%3D">Murang'a,
+                Kenya</a></span>
           </p>
           <p>
             <i class="fas fa-graduation-cap text-indigo-500 mr-2"></i>
@@ -184,7 +164,8 @@ export default {
           </p>
           <p>
             <i class="fas fa-university text-indigo-500 mr-2"></i>
-            Institution: <span class="font-medium decoration-1 underline"> <a href="https://www.mut.ac.ke/">Murang'a University Of Science and Technology</a></span>
+            Institution: <span class="font-medium decoration-1 underline"> <a href="https://www.mut.ac.ke/">Murang'a
+                University Of Science and Technology</a></span>
           </p>
         </div>
       </div>
@@ -194,10 +175,11 @@ export default {
   </div>
 </template>
 
-<style >
+<style>
 :root {
   --rotate-speed: 40;
-  --count: 8; /* Default count, the DOM element should override this */
+  --count: 8;
+  /* Default count, the DOM element should override this */
   --easeInOutSine: cubic-bezier(0.37, 0, 0.63, 1);
   --easing: cubic-bezier(0, 0.37, 1, 0.63);
 }
@@ -205,7 +187,8 @@ export default {
 .void {
   width: 100%;
   max-width: 1024px;
-  height: fit-content; /* was: fit-content */
+  height: fit-content;
+  /* was: fit-content */
   overflow: hidden;
 
   margin: auto;
@@ -215,6 +198,7 @@ export default {
 ul:hover * {
   animation-play-state: paused;
 }
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -225,6 +209,7 @@ ul {
   outline: 2px dotted magenta;
   z-index: 1;
 }
+
 li {
   position: absolute;
   top: 50%;
@@ -233,6 +218,7 @@ li {
   width: 100%;
   animation: rotateCW calc(var(--rotate-speed) * 1s) var(--easing) infinite;
 }
+
 .card {
   width: 27%;
   display: flex;
@@ -249,12 +235,14 @@ li {
   line-height: 20px;
   color: #9694a0;
   animation: rotateCCW calc(var(--rotate-speed) * 1s) var(--easing) infinite;
-  border:1px solid gray;
+  border: 1px solid gray;
 }
+
 a {
   text-decoration: none;
   color: unset;
 }
+
 .model-name {
   font-weight: 500;
   font-size: 18px;
@@ -262,6 +250,7 @@ a {
   color: #3b2ed0;
   display: block;
 }
+
 svg {
   position: absolute;
   top: 0;
@@ -273,26 +262,32 @@ li:nth-child(2),
 li:nth-child(2) .card {
   animation-delay: calc((var(--rotate-speed) / var(--count)) * -1s);
 }
+
 li:nth-child(3),
 li:nth-child(3) .card {
   animation-delay: calc((var(--rotate-speed) / var(--count)) * -2s);
 }
+
 li:nth-child(4),
 li:nth-child(4) .card {
   animation-delay: calc((var(--rotate-speed) / var(--count)) * -3s);
 }
+
 li:nth-child(5),
 li:nth-child(5) .card {
   animation-delay: calc((var(--rotate-speed) / var(--count)) * -4s);
 }
+
 li:nth-child(6),
 li:nth-child(6) .card {
   animation-delay: calc((var(--rotate-speed) / var(--count)) * -5s);
 }
+
 li:nth-child(7),
 li:nth-child(7) .card {
   animation-delay: calc((var(--rotate-speed) / var(--count)) * -6s);
 }
+
 li:nth-child(8),
 li:nth-child(8) .card {
   animation-delay: calc((var(--rotate-speed) / var(--count)) * -7s);
@@ -302,22 +297,27 @@ li:nth-child(8) .card {
   from {
     transform: translate3d(0px, -50%, -1px) rotate(-45deg);
   }
+
   to {
     transform: translate3d(0px, -50%, 0px) rotate(-315deg);
   }
 }
+
 @keyframes rotateCCW {
   from {
     transform: rotate(45deg);
   }
+
   to {
     transform: rotate(315deg);
   }
 }
+
 @keyframes pulseGlow {
   from {
     background-size: 60%;
   }
+
   to {
     background-size: 100%;
   }
@@ -334,8 +334,9 @@ li:nth-child(8) .card {
   box-shadow: 0px 18px 36px -18px rgba(12, 5, 46, 0.3),
     0px 30px 60px -12px rgba(12, 5, 46, 0.25);
   border-radius: 50%;
-  border:1px solid gray;
+  border: 1px solid gray;
 }
+
 .second-circle {
   position: absolute;
   width: 30%;
@@ -349,6 +350,7 @@ li:nth-child(8) .card {
     0px 30px 60px -12px rgba(12, 5, 46, 0.25);
   border-radius: 50%;
 }
+
 .last-circle {
   position: absolute;
   width: 56%;
@@ -362,15 +364,15 @@ li:nth-child(8) .card {
     0px 30px 60px -12px rgba(12, 5, 46, 0.25);
   border-radius: 50%;
 }
+
 .crop {
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0) 50%,
-    rgba(0, 0, 0, 1) 50%,
-    rgba(0, 0, 0, 1)
-  );
+  -webkit-mask-image: linear-gradient(90deg,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(0, 0, 0, 1));
 }
+
 .mask {
   position: absolute;
   top: 0;
@@ -380,26 +382,25 @@ li:nth-child(8) .card {
   animation: pulseGlow 5s linear infinite alternate;
   background-position: 100% 50%;
   background-repeat: no-repeat;
-  background-image: radial-gradient(
-    100% 50% at 100% 50%,
-    rgba(60, 26, 229, 0.25) 0%,
-    rgba(60, 26, 229, 0.247904) 11.79%,
-    rgba(59, 26, 229, 0.241896) 21.38%,
-    rgba(58, 26, 229, 0.2324) 29.12%,
-    rgba(57, 26, 229, 0.219837) 35.34%,
-    rgba(55, 26, 229, 0.20463) 40.37%,
-    rgba(53, 26, 229, 0.1872) 44.56%,
-    rgba(51, 26, 229, 0.16797) 48.24%,
-    rgba(48, 26, 229, 0.147363) 51.76%,
-    rgba(46, 26, 229, 0.1258) 55.44%,
-    rgba(44, 26, 229, 0.103704) 59.63%,
-    rgba(41, 26, 229, 0.0814963) 64.66%,
-    rgba(39, 26, 229, 0.0596) 70.88%,
-    rgba(36, 26, 229, 0.038437) 78.62%,
-    rgba(34, 26, 229, 0.0184296) 88.21%,
-    rgba(32, 26, 229, 0) 100%
-  );
+  background-image: radial-gradient(100% 50% at 100% 50%,
+      rgba(60, 26, 229, 0.25) 0%,
+      rgba(60, 26, 229, 0.247904) 11.79%,
+      rgba(59, 26, 229, 0.241896) 21.38%,
+      rgba(58, 26, 229, 0.2324) 29.12%,
+      rgba(57, 26, 229, 0.219837) 35.34%,
+      rgba(55, 26, 229, 0.20463) 40.37%,
+      rgba(53, 26, 229, 0.1872) 44.56%,
+      rgba(51, 26, 229, 0.16797) 48.24%,
+      rgba(48, 26, 229, 0.147363) 51.76%,
+      rgba(46, 26, 229, 0.1258) 55.44%,
+      rgba(44, 26, 229, 0.103704) 59.63%,
+      rgba(41, 26, 229, 0.0814963) 64.66%,
+      rgba(39, 26, 229, 0.0596) 70.88%,
+      rgba(36, 26, 229, 0.038437) 78.62%,
+      rgba(34, 26, 229, 0.0184296) 88.21%,
+      rgba(32, 26, 229, 0) 100%);
 }
+
 .mask:after {
   content: "";
   position: absolute;
@@ -407,13 +408,12 @@ li:nth-child(8) .card {
   height: 100%;
   right: 0;
   display: block;
-  background-image: linear-gradient(
-    180deg,
-    rgba(60, 26, 229, 0) 0%,
-    #3c1ae5 50%,
-    rgba(60, 26, 229, 0) 100%
-  );
+  background-image: linear-gradient(180deg,
+      rgba(60, 26, 229, 0) 0%,
+      #3c1ae5 50%,
+      rgba(60, 26, 229, 0) 100%);
 }
+
 @media (max-width: 768px) {
   .void {
     height: auto;
@@ -425,11 +425,13 @@ li:nth-child(8) .card {
     font-size: 12px;
     line-height: 16px;
     padding: 4px 8px;
-    width: 80%; /* adjust width */
+    width: 80%;
+    /* adjust width */
     margin: 0 auto;
     z-index: 40;
   }
-  .card:hover{
+
+  .card:hover {
     z-index: 100 !important;
   }
 

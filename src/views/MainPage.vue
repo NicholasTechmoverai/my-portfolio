@@ -2,6 +2,7 @@
 import { ref, onMounted } from "vue";
 
 const car = ref(null);
+const ismobile = window.innerWidth < 520;
 
 function moveRandom() {
   const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
@@ -47,7 +48,7 @@ onMounted(() => {
     </div>
   </div>
 
-  <div class="flex flex-col items-center justify-between lg:flex-row w-[100%] max-w-[1024px]">
+  <div class="flex flex-col items-center my-7 justify-between lg:flex-row w-[100%] max-w-[1024px]">
     <div>
       <div>
         <!-- Cloud Wrapper -->
@@ -185,7 +186,7 @@ onMounted(() => {
     </div>
   </div>
 
-<div class="hover-card-container">
+<div v-if="!ismobile" class="hover-card-container">
   <div class="hover-card-wrapper">
     <div class="hover-card hover-card-top">
       <div class="hover-card-side hover-card-side1"><h2></h2></div>

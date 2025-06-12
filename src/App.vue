@@ -17,8 +17,10 @@ const scrollToTop = () => {
     <img class="fixed top-0 left-0 w-full h-full object-cover opacity-10 z-0 pointer-events-none"
       src="./assets/bck.jpg" alt="" />
     <router-view />
-    <footer class="relative flex flex-col gap-10 bg-[#2c3e50] w-full px-4 py-10 text-white overflow-hidden">
+    <footer class="relative flex flex-col gap-10 bg-[#2c3e50]/70 w-full px-4 py-10 text-white overflow-hidden">
       <!-- Animated background elements -->
+           <img class="absolute top-0 left-0 w-full h-full object-cover opacity-2 z-0 pointer-events-none"
+      src="./assets/istockphoto-1403644222-612x612.webp" alt="" />
       <div class="absolute inset-0 overflow-hidden">
         <div
           class="absolute -bottom-20 -left-20 w-40 h-40 bg-green-500/10 rounded-full filter blur-3xl animate-pulse-slow">

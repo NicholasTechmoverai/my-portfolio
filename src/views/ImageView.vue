@@ -29,15 +29,15 @@
         <div class="relative h-64 lg:h-[550px]">
           <!-- Navigation Buttons -->
           <button v-if="hasPrevImage" @click="PrevImage"
-            class="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center group transition-all duration-300 hover:scale-110">
-            <svg class="w-6 h-6 text-white group-hover:text-blue-300 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            class="absolute  left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center group transition-all duration-300 hover:scale-110">
+            <svg class=" text-white group-hover:text-blue-300 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
 
           <button v-if="hasNextImage" @click="NextImage"
-            class="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center group transition-all duration-300 hover:scale-110">
-            <svg class="w-6 h-6 text-white group-hover:text-blue-300 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            class="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center group transition-all duration-300 hover:scale-110">
+            <svg class=" text-white group-hover:text-blue-300 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -71,14 +71,15 @@
         <div v-if="currentImage" class="relative p-8 overflow-y-auto max-h-[500px] flex flex-col justify-center">
           <!-- Close Button -->
           <button @click="closePopup"
-            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-md flex items-center justify-center transition-transform duration-300 hover:scale-110">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-md flex items-center justify-center transition-transform duration-300 hover:scale-110">
+            <svg class="" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
 
           <!-- Title & Description -->
           <div class="space-y-4">
+         
             <h2 class="text-4xl font-extrabold text-white tracking-wide leading-tight animate-fade-in-up">
               {{ currentImage.title }}
             </h2>

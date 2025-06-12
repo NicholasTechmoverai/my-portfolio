@@ -1,6 +1,8 @@
 import image1 from "./assets/image.png"
 import image2 from "./assets/WhatsApp Image 2025-04-22 at 10.33.20_3167e298.jpg"
-import image3 from "./assets/WhatsApp Image 2025-04-22 at 10.33.20_3167e298.jpg"
+import image3 from "./assets/WhatsApp Image 2025-04-22 at 10.36.09_801e5b4b.jpg"
+import image4 from "./assets/kevin-canlas-QYHehJ9Iovs-unsplash.jpg"
+import image5 from "./assets/setup.jpg"
 
 const images = [
     {
@@ -19,7 +21,7 @@ const images = [
     },
     {
         id: 458,
-        img: image2,
+        img: image5,
         title: "Visionary Leader",
         description: "Leading not by force, but by inspiring trust, vision, and unity.",
         location: "Urban Skyline"
@@ -38,20 +40,20 @@ const images = [
         description: "Where imagination meets execution to create the extraordinary.",
         location: "Studio Lab"
     },
-    // {
-    //     id: 461,
-    //     img: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBvcnRyYWl0fGVufDB8fDB8fHww",
-    //     title: "Focused Determination",
-    //     description: "Precision and purpose in every endeavor, every day.",
-    //     location: "Training Ground"
-    // },
-    // {
-    //     id: 462,
-    //     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHBvcnRyYWl0fGVufDB8fDB8fHww",
-    //     title: "Elegant Confidence",
-    //     description: "Grace under pressure, confidence without arrogance.",
-    //     location: "Modern Suite"
-    // },
+    {
+        id: 461,
+        img: image2,
+        title: "Focused Determination",
+        description: "Precision and purpose in every endeavor, every day.",
+        location: "Training Ground"
+    },
+    {
+        id: 462,
+        img: image4,
+        title: "Elegant Confidence",
+        description: "Grace under pressure, confidence without arrogance.",
+        location: "Modern Suite"
+    },
     // {
     //     id: 463,
     //     img: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHBvcnRyYWl0fGVufDB8fDB8fHww",

@@ -25,12 +25,16 @@
           'box-shadow': '0 10px 30px -5px rgba(0,0,0,0.3)'
         }"
       >
+      <!-- image cover frame -->
+             <!-- <img class="w-full z-50 absolute h-full object-cover opacity-100" src="../assets/60d58abd53b8130004e5c0df.png"
+              alt="Background pattern" /> -->
+
         <!-- Image with Parallax and Glow Effect -->
         <div class="relative overflow-hidden h-full w-full">
           <img
             :src="t_img.img"
             :alt="t_img.title"
-            class="w-full h-auto object-cover opacity-50 transition-all duration-700 ease-out group-hover:scale-110 group-focus:opacity-100 group-focus:scale-110 group-active:scale-110"
+            class="w-full h-auto object-cover opacity-50 transition-all duration-700 ease-out group-hover:z-100 group-hover:scale-110 group-focus:opacity-100 group-focus:scale-110 group-active:scale-110"
             :style="{
               'transform': 'translateZ(0)',
               'backface-visibility': 'hidden',

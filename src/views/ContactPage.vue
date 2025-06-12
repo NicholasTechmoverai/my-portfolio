@@ -1058,7 +1058,9 @@ figure {
 </style> -->
 
 <template>
-  <div class="relative min-h-screen overflow-hidden">
+      <img class="w-[40px] absolute right-[20%] top-[30%] h-auto object-cover opacity-90" src="../assets/612260af10aa310004f39813.png"
+        alt="Background pattern" />
+  <div class="relative scale-115 mb-10 md:scale-100 min-h-screen overflow-hidden  p-0">
     <!-- Animated Gradient Background -->
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-br animate-gradient-shift"></div>
@@ -1075,10 +1077,11 @@ figure {
       }">
       </div>
     </div>
+ 
 
     <!-- Phone Frame Container -->
     <div
-      class="relative  mx-auto mt-15 w-[350px] h-[700px] md:w-[400px] md:h-[800px] bg-gray-900/0 rounded-[40px] border-[14px] border-gray-800/0 shadow-xl overflow-hidden">
+      class="relative  m-0 mt-15 w-[350px] h-[700px] md:w-[400px] md:h-[800px] bg-gray-900/0 rounded-[40px] border-[14px] border-gray-800/0 shadow-xl overflow-hidden">
       <!-- Phone Screen Area -->
       <div class="relative w-full h-full overflow-y-hidden  overflow-x-hidden bg-gray-900/0">
 
@@ -1096,7 +1099,7 @@ figure {
         <div class="relative pt-12 pb-8 px-7 h-full">
           <!-- Background Image with Overlay -->
           <div class="absolute inset-0 overflow-hidden">
-            <img class="w-full h-full object-cover opacity-80" src="../assets/5e90a804c7c8f9000434dd95.png"
+            <img class="w-full h-full object-cover opacity-90" src="../assets/5e90a804c7c8f9000434dd95.png"
               alt="Background pattern" />
           </div>
 
@@ -1127,7 +1130,7 @@ figure {
 
           <!-- Glassmorphism Contact Form -->
           <div
-            class="relative bg-gray-800/0 backdrop-blur-lg rounded-xl p-0 border border-gray-700/0 hover:border-indigo-400/50 transition-all duration-500">
+            class="relative backdrop-blur-lg rounded-xl p-0 border border-gray-700/0 hover:border-indigo-400/50 transition-all duration-500">
             <!-- Dynamic Glow Effects -->
             <div
               class="absolute -top-1/3 -right-1/3 w-full h-full bg-blue-500/10 rounded-full filter blur-3xl animate-glow-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
@@ -1221,7 +1224,7 @@ figure {
 
       </div>
     </div><!-- Advanced Phone Home Indicator -->
-    <div class="absolute bottom-40 md:bottom-15 left-1/2 transform -translate-x-1/2 z-30 group">
+    <div class="absolute bottom-15 md:bottom-15 left-1/2 transform -translate-x-1/2 z-30 group">
       <!-- Main Indicator with enhanced interactions -->
       <div class="relative w-20 h-2 flex items-center justify-center cursor-pointer">
         <!-- Base Bar with animated hover effects -->

@@ -47,14 +47,38 @@ onMounted(() => {
       </div>
     </div>
   </div>
+  <!-- Featured Image Section with Advanced Animation -->
+  <section
+    class="relative w-[96%] max-w-[1150px] box-border mb-7 h-[70vh] md:h-[80vh] overflow-hidden mt-12 rounded-3xl m-5 border border-white/10">
+    <!-- Background Image with Parallax -->
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1607743386760-88ac62b89b8a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Featured"
+        class="w-full z-30 box-border bg-fixed opacity-70 h-full object-cover transform scale-110 hover:scale-100 transition-transform duration-10000 ease-out" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+    </div>
 
-  <div class="flex flex-col items-center my-7 justify-between lg:flex-row w-[100%] max-w-[1024px]">
-    <div>
+    <!-- Floating Grid Overlay -->
+    <article class="absolute z-50 inset-0 mix-blend-overlay pointer-events-none">
+      <div class="grid grid-cols-12 grid-rows-6 h-full w-full gap-1 opacity-50">
+        <div v-for="i in 72" :key="`grid-${i}`"
+          class="border z-70 border-white/20 bg-gray-400/20 hover:bg-white/20 transition-all duration-300" :class="{
+            'col-span-2': i % 5 === 0,
+            'row-span-2': i % 7 === 0,
+            'bg-white/5': i % 3 === 0
+          }"></div>
+      </div>
+    </article>
+
+    <!-- Featured Content -->
+    <div class="relative z-10 h-full flex flex-col justify-end p-2 md:p-8 text-white">
+      <h3 class="text-2xl md:text-4xl font-bold mb-4 animate-fade-in-up">Developer's  stack</h3>
       <div>
+
         <!-- Cloud Wrapper -->
-        <div
-          class="relative h-[200px] mt-10 mb-[-70px] max-w-md w-full backdrop-blur-md rounded-[50%_50%_50%_50%/60%_40%] shadow-lg p-6 text-center text-white text-shadow-gray-500 overflow-hidden">
-          <img class="absolute top-[-35px] animate-bounce duration-[2000s] delay-[5000000000ms]"
+        <div>
+          <img class="absolute top-[-35px] opacity-40 animate-bounce duration-[2000s] delay-[5000000000ms]"
             src="../assets/580b585b2edbce24c47b2639.png" alt="" />
 
           <!-- Cloud bubbles (decorative puffs) -->
@@ -65,20 +89,31 @@ onMounted(() => {
           <!-- Content -->
           <div class="relative z-10">
             <h2 class="text-lg font-semibold text-white mb-2">☁️ Welcome, Visionary</h2>
-            <p class="text-sm leading-relaxed">
+            <p class="text-[18px] md:text-xl  leading-relaxed">
               You’ve just stepped into a space where code meets creativity, and curiosity writes the story.
               I'm <span class="text-purple-300 font-medium">Kariuki Nicholas</span>, a full-stack developer crafting
               digital experiences where code meets creativity.
               This is my interactive canvas—explore projects that blend innovation with purpose.
             </p>
 
-            <a href="#blog" class="inline-block mt-4 text-xs text-purple-300 hover:text-purple-200 transition">
-              → Begin the Journey
-            </a>
           </div>
 
         </div>
       </div>
+      <div class="flex gap-4 animate-fade-in-up delay-200">
+        <router-link to="/projects" class="px-6 py-0  md:py-2 my-1 bg-white/50 text-black rounded-full font-medium hover:bg-gray-400/50 cursor-pointer transition-colors">
+          View projects
+        </router-link>
+        <router-link to="/about" class="px-6 py-0 md:py-2 my-1 border border-white rounded-full font-medium cursor-pointer hover:bg-white/10 transition-colors">
+          →about Me
+        </router-link>
+      </div>
+    </div>
+  </section>
+  <div class="flex flex-col items-center my-7 justify-between lg:flex-row w-[100%] max-w-[1024px]">
+    <div>
+
+
       <div class="relative flex flex-col items-center md:rotate-[-90deg]">
         <!-- Profile Image -->
         <img
@@ -186,18 +221,26 @@ onMounted(() => {
     </div>
   </div>
 
-<div v-if="!ismobile" class="hover-card-container">
-  <div class="hover-card-wrapper">
-    <div class="hover-card hover-card-top">
-      <div class="hover-card-side hover-card-side1"><h2></h2></div>
-      <div class="hover-card-side hover-card-side2"><h2></h2></div>
-    </div>
-    <div class="hover-card hover-card-main">
-      <div class="hover-card-side hover-card-side1"><h2>TRANSITION</h2></div>
-      <div class="hover-card-side hover-card-side2"><h2>TRANSITION</h2></div>
+  <div v-if="!ismobile" class="hover-card-container">
+    <div class="hover-card-wrapper">
+      <div class="hover-card hover-card-top">
+        <div class="hover-card-side hover-card-side1">
+          <h2></h2>
+        </div>
+        <div class="hover-card-side hover-card-side2">
+          <h2></h2>
+        </div>
+      </div>
+      <div class="hover-card hover-card-main">
+        <div class="hover-card-side hover-card-side1">
+          <h2></h2>
+        </div>
+        <div class="hover-card-side hover-card-side2">
+          <h2></h2>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </template>
 <style scoped>
 .hover-card-wrapper {
@@ -207,19 +250,24 @@ onMounted(() => {
   height: 350px;
   box-shadow: 0px 30px 40px -25px rgba(0, 0, 0, 0.5);
 }
+
 .hover-card-wrapper:hover .hover-card-top .hover-card-side {
   transform: rotateX(0deg);
 }
+
 .hover-card-wrapper:hover .hover-card-top .hover-card-side:after {
   opacity: 0;
   transition-delay: 0.2s;
 }
+
 .hover-card-wrapper:hover .hover-card-main .hover-card-side:after {
   opacity: 1;
 }
+
 .hover-card-wrapper:hover .hover-card-main .hover-card-side2 {
   transform: rotateY(-90deg) translateX(250px);
 }
+
 .hover-card-wrapper:hover .hover-card-main .hover-card-side1 {
   transform: rotateY(-90deg) translateX(-250px);
 }
@@ -237,6 +285,7 @@ onMounted(() => {
   font-size: 50px;
   background-size: 500px 350px;
 }
+
 .hover-card h2 {
   color: rgb(88, 85, 85);
   font-family: monospace;
@@ -256,6 +305,7 @@ onMounted(() => {
   transition: 0.5s linear transform;
   transition: 1s cubic-bezier(0.5, -0.03, 0.58, 1.08) transform;
 }
+
 .hover-card .hover-card-side:after {
   content: "";
   position: absolute;
@@ -265,12 +315,15 @@ onMounted(() => {
   height: 100%;
   transition: 1s cubic-bezier(0.5, -0.03, 0.58, 1.08) opacity;
 }
+
 .hover-card .hover-card-side1 {
   background-position: 0% 0%;
 }
+
 .hover-card .hover-card-side2 {
   background-position: 100% 0;
 }
+
 .hover-card .hover-card-side2 h2 {
   transform: translateX(-50%);
 }
@@ -278,22 +331,28 @@ onMounted(() => {
 .hover-card.hover-card-main {
   transform-origin: bottom;
 }
+
 .hover-card.hover-card-main .hover-card-side {
   background-image: url(../assets/1st-computer.png);
 
 }
+
 .hover-card.hover-card-main .hover-card-side1 {
   transform-origin: left;
 }
+
 .hover-card.hover-card-main .hover-card-side2 {
   transform-origin: right;
 }
+
 .hover-card.hover-card-main .hover-card-side:after {
   opacity: 0;
 }
+
 .hover-card.hover-card-main .hover-card-side1:after {
   background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
 }
+
 .hover-card.hover-card-main .hover-card-side2:after {
   background: linear-gradient(to left, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
 }
@@ -301,20 +360,25 @@ onMounted(() => {
 .hover-card.hover-card-top {
   transform-origin: bottom;
 }
+
 .hover-card.hover-card-top .hover-card-side1 {
   transform-origin: right;
   transform: rotateY(-90deg) translateX(-250px);
 }
+
 .hover-card.hover-card-top .hover-card-side1:after {
   background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
 }
+
 .hover-card.hover-card-top .hover-card-side2 {
   transform-origin: left;
   transform: rotateY(-90deg) translateX(-250px);
 }
+
 .hover-card.hover-card-top .hover-card-side2:after {
   background: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
 }
+
 .hover-card.hover-card-top .hover-card-side {
   background-image: url(../assets/2nd-computer.png);
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-[1024px] z-40 mx-auto">
     <!-- Animated Header -->
-    <div class="p-3 bg-gradient-to-r from-purple-600 to-blue-500 mt-10 mx-3 border-2 border-white/20 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 group">
+    <div class="p-3 bg-gradient-to-r from-purple-600/20 to-blue-500/10 mt-10 mx-3 border-2 border-white/20 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 group">
       <h2 class="text-2xl font-bold text-center animate-text bg-gradient-to-r from-white via-amber-200 to-white bg-clip-text text-transparent">
         @gathogo's <span class="inline-block group-hover:rotate-12 transition-transform">✨</span> 4K Gallery <span class="inline-block group-hover:-rotate-12 transition-transform">✨</span>
       </h2>
@@ -9,10 +9,10 @@
     </div>
 
     <!-- Masonry Grid with Parallax Effect -->
-    <div class="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-4 p-4 min-h-screen w-full relative">
+    <div class="columns-2 box-border sm:columns-2 md:columns-3 lg:columns-4 gap-4 p-4 min-h-screen w-full relative">
       <!-- Floating Decorative Elements -->
-      <div class="absolute -top-20 -left-20 w-40 h-40 bg-purple-500/10 rounded-full blur-xl"></div>
-      <div class="absolute -bottom-20 -right-20 w-60 h-60 bg-blue-500/10 rounded-full blur-xl"></div>
+      <div class="absolute -top-20 left-20 w-40 h-40 bg-purple-500/10 rounded-full blur-xl"></div>
+      <div class="absolute -bottom-20 right-20 w-60 h-60 bg-blue-500/10 rounded-full blur-xl"></div>
       
       <!-- Masonry Items with Advanced Effects -->
       <div
@@ -30,7 +30,7 @@
           <img
             :src="t_img.img"
             :alt="t_img.title"
-            class="w-full h-auto object-cover transition-all duration-700 ease-out group-hover:scale-110 group-focus:scale-110 group-active:scale-110"
+            class="w-full h-auto object-cover opacity-50 transition-all duration-700 ease-out group-hover:scale-110 group-focus:opacity-100 group-focus:scale-110 group-active:scale-110"
             :style="{
               'transform': 'translateZ(0)',
               'backface-visibility': 'hidden',
@@ -77,50 +77,7 @@
       </div>
     </div>
 
-    <!-- Featured Image Section with Advanced Animation -->
-    <section class="relative w-full h-[80vh] overflow-hidden mt-12 rounded-3xl mx-3 border border-white/20">
-      <!-- Background Image with Parallax -->
-      <div class="absolute inset-0 overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1607743386760-88ac62b89b8a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Featured"
-          class="w-full h-full object-cover transform scale-110 hover:scale-100 transition-transform duration-10000 ease-out"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-      </div>
-      
-      <!-- Floating Grid Overlay -->
-      <article class="absolute inset-0 mix-blend-overlay pointer-events-none">
-        <div class="grid grid-cols-12 grid-rows-6 h-full w-full gap-1 opacity-50">
-          <div 
-            v-for="i in 72" 
-            :key="`grid-${i}`"
-            class="border border-white/10 hover:bg-white/20 transition-all duration-300"
-            :class="{
-              'col-span-2': i % 5 === 0,
-              'row-span-2': i % 7 === 0,
-              'bg-white/5': i % 3 === 0
-            }"
-          ></div>
-        </div>
-      </article>
-      
-      <!-- Featured Content -->
-      <div class="relative z-10 h-full flex flex-col justify-end p-8 text-white">
-        <h3 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Featured Work</h3>
-        <p class="text-lg md:text-xl max-w-2xl mb-6 animate-fade-in-up delay-100">
-          A showcase of my finest visual creations, captured in stunning 4K resolution.
-        </p>
-        <div class="flex gap-4 animate-fade-in-up delay-200">
-          <button class="px-6 py-3 bg-white text-black rounded-full font-medium hover:bg-gray-100 transition-colors">
-            View Portfolio
-          </button>
-          <button class="px-6 py-3 border border-white rounded-full font-medium hover:bg-white/10 transition-colors">
-            Contact Me
-          </button>
-        </div>
-      </div>
-    </section>
+
   </div>
       <router-view class="fixed z-50"></router-view> 
 

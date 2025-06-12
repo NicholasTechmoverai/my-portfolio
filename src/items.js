@@ -38,27 +38,27 @@ const images = [
         description: "Where imagination meets execution to create the extraordinary.",
         location: "Studio Lab"
     },
-    {
-        id: 461,
-        img: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBvcnRyYWl0fGVufDB8fDB8fHww",
-        title: "Focused Determination",
-        description: "Precision and purpose in every endeavor, every day.",
-        location: "Training Ground"
-    },
-    {
-        id: 462,
-        img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHBvcnRyYWl0fGVufDB8fDB8fHww",
-        title: "Elegant Confidence",
-        description: "Grace under pressure, confidence without arrogance.",
-        location: "Modern Suite"
-    },
-    {
-        id: 463,
-        img: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHBvcnRyYWl0fGVufDB8fDB8fHww",
-        title: "Joyful Expression",
-        description: "Happiness amplified through genuine connection.",
-        location: "Festival Grounds"
-    },
+    // {
+    //     id: 461,
+    //     img: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBvcnRyYWl0fGVufDB8fDB8fHww",
+    //     title: "Focused Determination",
+    //     description: "Precision and purpose in every endeavor, every day.",
+    //     location: "Training Ground"
+    // },
+    // {
+    //     id: 462,
+    //     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHBvcnRyYWl0fGVufDB8fDB8fHww",
+    //     title: "Elegant Confidence",
+    //     description: "Grace under pressure, confidence without arrogance.",
+    //     location: "Modern Suite"
+    // },
+    // {
+    //     id: 463,
+    //     img: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHBvcnRyYWl0fGVufDB8fDB8fHww",
+    //     title: "Joyful Expression",
+    //     description: "Happiness amplified through genuine connection.",
+    //     location: "Festival Grounds"
+    // },
 ];
 
 export default images;

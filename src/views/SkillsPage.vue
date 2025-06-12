@@ -151,4 +151,5 @@ import ProgressCircle from "./ProgressCircle.vue";
       </div>
     </div>
   </div>
+  
 </template>

@@ -1,4 +1,5 @@
 <script>
+import mainImage from "../assets/image.png"
 export default {
   mounted() {
 
@@ -6,15 +7,15 @@ export default {
     const models = [
       {
         name: "Who AM I",
-        description: "Born on Earth in 2003,"
+        description: "Born on Earth in 2003,Realized the're calling me 'Nicholas Kariuki' and my sir name was 'Gathogo' after little education realized i was somewhere in Nyandarua Kenya. Started tampering with my fathers electronics in the room as soon i could walk! yep that today makes me a 'Technologist' by proffesion!"
       },
       {
         name: "highschool Background",
-        description: "Alumni Lanet secondary school"
+        description: "Alumni Lanet secondary school Nakuru"
       },
       {
         name: "Academic Background",
-        description: "About to Graduate(d) with a BSc in Computer Science, specializing in Machine Learning."
+        description: "About to Graduate(d) with a BSc in Computer Science, specializing in Machine Learning.Also a good skilled, experienced and proffsional fullstack developer"
       },
       {
         name: "proffesion Background",
@@ -50,7 +51,8 @@ export default {
       svgKey: 0,
       intervalId: null,
       images: [
-        "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        mainImage,
+        // "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         // "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
     };
@@ -114,6 +116,7 @@ export default {
 };
 </script>
 <template>
+  
   <div class="void" id="void">
     <div class="crop">
       <ul id="card-list" style="--count: 0"></ul>

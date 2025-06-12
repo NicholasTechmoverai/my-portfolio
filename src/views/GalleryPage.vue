@@ -73,7 +73,7 @@
           <!-- Animated Button -->
           <button 
           @click="viewImage(t_img.id)"
-            class="mt-4 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white text-sm font-medium transform scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 ease-out delay-300 hover:bg-white/20 hover:border-white/30 pointer-events-auto"
+            class="mt-4 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white text-sm font-medium transform scale-90 opacity-0 group-hover:scale-100 group-focus:opacity-100 group-active:opacity-100 group-hover:opacity-100 transition-all duration-500 ease-out delay-300 hover:bg-white/20 hover:border-white/30 pointer-events-auto"
           >
             View Details
           </button>

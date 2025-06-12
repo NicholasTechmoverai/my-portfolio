@@ -26,7 +26,7 @@
       <!-- Main Grid -->
       <div class="grid lg:grid-cols-2 h-full">
         <!-- Image Column -->
-        <div class="relative h-64 lg:h-[550px]">
+        <div class="relative h-auto max-h-[450px] lg:h-[550px]">
           <!-- Navigation Buttons -->
           <button v-if="hasPrevImage" @click="PrevImage"
             class="absolute  left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center group transition-all duration-300 hover:scale-110">

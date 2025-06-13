@@ -1,17 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import SkillsPage from '../views/SkillsPage.vue' 
+import SkillsPage from '../views/SkillsPage.vue'
 import MainPage from '../views/MainPage.vue'
 import ProjectsPage from '../views/ProjectsPage.vue'
+import ProjectView from '../views/ProjectView.vue'
 import AboutPage from '../views/AboutPage.vue'
 import GalleryPage from '../views/GalleryPage.vue'
 import ImageView from '../views/ImageView.vue'
 import ContactPage from '../views/ContactPage.vue'
 const routes = [
-    {
-        path: '/',
-        name: 'Main',
-        component: MainPage,
-      },
+  {
+    path: '/',
+    name: 'Main',
+    component: MainPage,
+  },
   {
     path: '/skills',
     name: 'Skills',
@@ -21,6 +22,9 @@ const routes = [
     path: '/projects',
     name: 'Projects',
     component: ProjectsPage,
+    children: [
+      { path: 'view', name: 'ProjectView', component: ProjectView },
+    ]
   },
   {
     path: '/about',
@@ -31,11 +35,11 @@ const routes = [
     path: '/gallery',
     name: 'Gallery',
     component: GalleryPage,
-        children: [
-      { path: 'view', name: 'ImageView', component: ImageView }, 
+    children: [
+      { path: 'view', name: 'ImageView', component: ImageView },
     ]
-  }, 
-   {
+  },
+  {
     path: '/contact-me',
     name: 'Contact',
     component: ContactPage,

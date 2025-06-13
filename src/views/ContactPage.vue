@@ -1117,14 +1117,10 @@ figure {
               </span>
             </h1>
             <p class="text-sm md:text-base text-gray-300 px-2">
-              <span v-animate-typing="{
-                text: messages,
-                speed: 50,
-                backSpeed: 30,
-                loop: true,
-                showCursor: true,
-                cursorChar: '|'
-              }"></span>
+              <vue-typed-js :strings="messages" :typeSpeed="50" :backSpeed="30" :loop="true" :showCursor="true"
+                cursorChar="|">
+                <span class="typing"></span>
+              </vue-typed-js>
             </p>
           </div>
 
@@ -1318,6 +1314,8 @@ figure {
 
 <script setup>
 import { ref, reactive, onMounted, computed } from 'vue'
+import VueTypedJs from 'vue-typed-js'
+const Vuetype = VueTypedJs
 
 // Enhanced Particle system
 const particles = ref([])

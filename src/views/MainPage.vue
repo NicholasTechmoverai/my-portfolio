@@ -1,21 +1,64 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted } from "vue"
 
-const car = ref(null);
-const ismobile = window.innerWidth < 520;
+const car = ref(null)
+const ismobile = window.innerWidth < 520
 
-function moveRandom() {
-  const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
-  const randomY = Math.floor(Math.random() * (window.innerHeight - 100));
+const moveRandom = () => {
+  const randomX = Math.floor(Math.random() * (window.innerWidth - 100))
+  const randomY = Math.floor(Math.random() * (window.innerHeight - 100))
 
   if (car.value) {
-    car.value.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    car.value.style.transform = `translate(${randomX}px, ${randomY}px)`
   }
 }
 
+const words = ref([
+  "You've", "just", "entered", "a", "realm", "where", "code", "meets", "creativity,",
+  "and", "curiosity", "fuels", "the", "vision.",
+  "I'm", "Nicholas", "Kariuki,", "a", "full-stack", "developer",
+  "crafting", "immersive", "digital", "experiences.",
+  "This", "is", "my", "interactive", "canvas—", "explore", "projects",
+  "that", "merge", "innovation", "with", "purpose."
+])
+
+const getWordClass = (word) => {
+  const clean = word.toLowerCase().replace(/[^\w\-]/g, '')
+  if (['nicholas', 'kariuki'].includes(clean)) return 'persona'
+  if (['full-stack', 'developer'].includes(clean)) return 'proffesion'
+  return ''
+}
+
 onMounted(() => {
-  setInterval(moveRandom, 2000);
-});
+  setInterval(moveRandom, 2000)
+
+  const wordEls = document.querySelectorAll('#welcomeMessage .word')
+  let currentIndex = 0
+
+  const highlightNextWord = () => {
+    wordEls.forEach(word => word.classList.remove('highlight'))
+
+    const currentWord = wordEls[currentIndex]
+    const wordText = currentWord.textContent.trim().toLowerCase()
+
+    currentWord.classList.add('highlight')
+
+    if (['nicholas', 'kariuki'].includes(wordText)) {
+      currentWord.classList.add('persona')
+    }
+
+    if (['full-stack', 'developer'].includes(wordText)) {
+      currentWord.classList.add('proffesion')
+    }
+
+    currentIndex = (currentIndex + 1) % wordEls.length
+
+    const speed = Math.floor(Math.random() * 200 + 200)
+    setTimeout(highlightNextWord, speed)
+  }
+
+  highlightNextWord()
+})
 </script>
 
 <template>
@@ -51,7 +94,10 @@ onMounted(() => {
   <section
     class="relative w-[96%] max-w-[1150px] box-border md:mb-7 h-[70vh] max-h-[800px] md:h-[80vh] overflow-hidden mt-12 rounded-3xl m-5 border border-white/10">
     <!-- Background Image with Parallax -->
-    <div class="absolute inset-0 overflow-hidden">
+    <img src="../assets/layered-waves-haikei.svg" alt="layered waves"
+      class="absolute inset-0 w-full h-full object-cover transform opacity-80 transition-transform duration-[10000ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+      data-speed="0.8" />
+    <div class="absolute inset-0 overflow-hidden opacity-70">
       <img
         src="https://images.unsplash.com/photo-1607743386760-88ac62b89b8a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Featured"
@@ -71,40 +117,50 @@ onMounted(() => {
       </div>
     </article>
 
+    <!-- Cloud Animations -->
+    <div class="absolute inset-0 overflow-hidden">
+      <!-- Cloud 1 - Moves diagonally -->
+      <img class="absolute top-[10px] w-[200px] opacity-40 cloud-animation" src="../assets/580b585b2edbce24c47b2639.png"
+        alt="clouds" style="animation: floatCloud1 45s linear infinite;" />
+
+      <!-- Cloud 2 - Moves left to right -->
+      <img class="absolute top-[20px] w-[200px] opacity-40 cloud-animation" src="../assets/58af038a6c252499281ae91c.png"
+        alt="clouds" style="animation: floatCloud2 60s linear infinite;" />
+
+      <!-- Cloud 3 - Moves right to left -->
+      <img class="absolute top-[30px] w-[200px] opacity-40 cloud-animation" src="../assets/580b585b2edbce24c47b2636.png"
+        alt="clouds" style="animation: floatCloud3 50s linear infinite;" />
+    </div>
+
+    <!-- Cloud bubbles (decorative puffs) -->
+    <div class="absolute w-24 h-24 bg-white/10 rounded-full top-[-30px] left-[20px] blur-md animate-pulse"></div>
+    <div class="absolute w-16 h-16 bg-white/10 rounded-full top-[-20px] right-[30px] blur-sm animate-pulse"></div>
+    <div class="absolute w-20 h-20 bg-white/10 rounded-full bottom-[-30px] left-[50px] blur-md"></div>
+
     <!-- Featured Content -->
     <div class="relative z-10 h-full flex flex-col justify-end p-2 md:p-8 text-white">
-      <h3 class="text-2xl md:text-4xl font-bold mb-4 animate-fade-in-up">Developer's  stack</h3>
+      <h3 class="text-2xl md:text-4xl font-bold mb-4 animate-fade-in-up">Developer's stack</h3>
       <div>
-
-        <!-- Cloud Wrapper -->
         <div>
-          <img class="absolute top-[-35px] opacity-40 animate-bounce duration-[2000s] delay-[5000000000ms]"
-            src="../assets/580b585b2edbce24c47b2639.png" alt="" />
-
-          <!-- Cloud bubbles (decorative puffs) -->
-          <div class="absolute w-24 h-24 bg-white/10 rounded-full top-[-30px] left-[20px] blur-md animate-pulse"></div>
-          <div class="absolute w-16 h-16 bg-white/10 rounded-full top-[-20px] right-[30px] blur-sm animate-pulse"></div>
-          <div class="absolute w-20 h-20 bg-white/10 rounded-full bottom-[-30px] left-[50px] blur-md"></div>
-
-          <!-- Content -->
+          <!-- Dynamic Welcome Message -->
           <div class="relative z-10">
             <h2 class="text-lg font-semibold text-white mb-2">☁️ Welcome, Visionary</h2>
-            <p class="text-[20px] md:text-xl  leading-relaxed">
-              You’ve just stepped into a space where code meets creativity, and curiosity writes the story.
-              I'm <span class="text-purple-300 font-medium">Kariuki Nicholas</span>, a full-stack developer crafting
-              digital experiences where code meets creativity.
-              This is my interactive canvas—explore projects that blend innovation with purpose.
+            <p id="welcomeMessage" class="text-[20px] md:text-xl leading-relaxed text-gray-200">
+              <span v-for="(word, index) in words" :key="index" class="word" :class="getWordClass(word)">
+                {{ `${word} ` }}
+              </span>
             </p>
-
           </div>
 
         </div>
       </div>
       <div class="flex gap-4 animate-fade-in-up delay-200">
-        <router-link to="/projects" class="px-6 py-0  md:py-2 my-1 bg-white/50 text-black rounded-full font-medium hover:bg-gray-400/50 cursor-pointer transition-colors">
+        <router-link to="/projects"
+          class="px-6 py-0 md:py-2 my-1 bg-gradient-to-r from-purple-600/70 to-blue-500/40 border border-gray-500  text-black rounded-full font-medium hover:bg-gray-400/50 cursor-pointer transition-colors">
           View projects
         </router-link>
-        <router-link to="/about" class="px-6 py-0 md:py-2 my-1 border border-white rounded-full font-medium cursor-pointer hover:bg-white/10 transition-colors">
+        <router-link to="/about"
+          class="px-6 py-0 md:py-2 my-1 border border-white rounded-full font-medium cursor-pointer hover:bg-white/10 transition-colors">
           →about Me
         </router-link>
       </div>
@@ -381,5 +437,87 @@ onMounted(() => {
 
 .hover-card.hover-card-top .hover-card-side {
   background-image: url(../assets/2nd-computer.png);
+}
+</style>
+<style>
+/* Cloud Animation Keyframes */
+@keyframes floatCloud1 {
+  0% {
+    transform: translateX(-20%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(100%) translateY(50px);
+  }
+
+  100% {
+    transform: translateX(-20%) translateY(0);
+  }
+}
+
+@keyframes floatCloud2 {
+  0% {
+    transform: translateX(-100%) translateY(20px);
+  }
+
+  100% {
+    transform: translateX(100vw) translateY(0);
+  }
+}
+
+@keyframes floatCloud3 {
+  0% {
+    transform: translateX(100vw) translateY(40px);
+  }
+
+  100% {
+    transform: translateX(-100%) translateY(0);
+  }
+}
+
+.cloud-animation {
+  will-change: transform;
+  animation-timing-function: linear;
+}
+
+.word {
+  transition: all 0.5s ease;
+  position: relative;
+  padding: 0 2px;
+}
+
+.word.highlight {
+  color: #6366f1;
+  /* Indigo-500 */
+  background-color: rgba(128, 128, 128, 0.341);
+  font-weight: normal;
+  transition: all 0.7s ease;
+  border-radius: 5px;
+  text-decoration: underline;
+}
+
+.word.persona {
+  color: #22c55e;
+  /* Green-500 */
+  font-weight:bold;
+}
+
+.word.proffesion {
+  color: #f97316;
+  /* Orange-500 */
+}
+
+@keyframes pulseHighlight {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 </style>

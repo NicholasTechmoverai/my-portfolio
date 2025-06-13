@@ -76,6 +76,7 @@
                                     </p>
                                 </div>
                             </div>
+                            
 
                             <!-- Code Section -->
                             <div
@@ -91,7 +92,7 @@
                                         <ion-icon name="copy-outline"></ion-icon> Copy
                                     </button>
                                     <div v-if="showCopied"
-                                        class=" top-7 absolute right-4 bg-green-500/90 text-white px-3 py-1 rounded-md text-sm animate-fade">
+                                        class=" top-7  right-4 bg-green-500/90 text-white px-3 py-1 rounded-md text-sm animate-fade">
                                         Copied!
                                     </div>
                                 </div>

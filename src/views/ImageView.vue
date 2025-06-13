@@ -137,7 +137,7 @@ button {
 <script setup>
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import images from '../items'
+import {images} from '../items'
 
 const route = useRoute()
 const router = useRouter()
@@ -145,7 +145,6 @@ const router = useRouter()
 const currentImageId = computed(() => Number(route.query.v))
 const currentImage = computed(() => images.find((img) => img.id === currentImageId.value))
 
-// Check if previous/next images exist
 const hasPrevImage = computed(() => images.some(img => img.id === currentImageId.value - 1))
 const hasNextImage = computed(() => images.some(img => img.id === currentImageId.value + 1))
 

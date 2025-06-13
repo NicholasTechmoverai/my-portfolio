@@ -49,7 +49,7 @@ onMounted(() => {
   </div>
   <!-- Featured Image Section with Advanced Animation -->
   <section
-    class="relative w-[96%] max-w-[1150px] box-border mb-7 h-[70vh] md:h-[80vh] overflow-hidden mt-12 rounded-3xl m-5 border border-white/10">
+    class="relative w-[96%] max-w-[1150px] box-border md:mb-7 h-[70vh] max-h-[800px] md:h-[80vh] overflow-hidden mt-12 rounded-3xl m-5 border border-white/10">
     <!-- Background Image with Parallax -->
     <div class="absolute inset-0 overflow-hidden">
       <img
@@ -89,7 +89,7 @@ onMounted(() => {
           <!-- Content -->
           <div class="relative z-10">
             <h2 class="text-lg font-semibold text-white mb-2">☁️ Welcome, Visionary</h2>
-            <p class="text-[18px] md:text-xl  leading-relaxed">
+            <p class="text-[20px] md:text-xl  leading-relaxed">
               You’ve just stepped into a space where code meets creativity, and curiosity writes the story.
               I'm <span class="text-purple-300 font-medium">Kariuki Nicholas</span>, a full-stack developer crafting
               digital experiences where code meets creativity.
@@ -110,11 +110,11 @@ onMounted(() => {
       </div>
     </div>
   </section>
-  <div class="flex flex-col items-center my-7 justify-between lg:flex-row w-[100%] max-w-[1024px]">
+  <div class="flex flex-col items-center mb-7 justify-between lg:flex-row w-[100%] max-w-[1024px]">
     <div>
 
 
-      <div class="relative flex flex-col items-center md:rotate-[-90deg]">
+      <div class="relative flex flex-col items-center md:rotate-[-90deg] h-full">
         <!-- Profile Image -->
         <img
           class="border border-gray-600 w-[230px] h-[230px] object-cover rounded-[2rem] absolute top-29 left-1/2 transform -translate-x-1/2 z-20 md:rotate-[90deg] lg:top-41"

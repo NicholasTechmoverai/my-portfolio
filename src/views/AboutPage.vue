@@ -84,11 +84,11 @@ export default {
     },
     insertSvg(base64Image) {
       this.animateSvg = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" width="300px" height="300px" preserveAspectRatio="none">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1 1" width="300px" height="300px" preserveAspectRatio="none">
           <defs>
             <clipPath id="clip-path" clipPathUnits="objectBoundingBox">
               <path id="filterPath" d="M.9722.1661c.0598.1143.0141.2803-.0528.3799c-.0669.0996-.1584.1365-.2675.225c-.1091.0885-.2323.2361-.359.2287c-.1267-.0074-.2534-.1623-.2851-.332c-.0317-.1697.0353-.354.1479-.4794c.1126-.1254.271-.1881.4329-.1881c.1619-.0037.3238.0553.3836.1659z">
-                <animate attributeName="d" begin="0s" dur="10s" repeatCount="indefinite"
+                <animate attributeName="d" begin="0s" dur="1]0s" repeatCount="indefinite"
                   values="
                     M.9722.1661c.0598.1143.0141.2803-.0528.3799c-.0669.0996-.1584.1365-.2675.225c-.1091.0885-.2323.2361-.359.2287c-.1267-.0074-.2534-.1623-.2851-.332c-.0317-.1697.0353-.354.1479-.4794c.1126-.1254.271-.1881.4329-.1881c.1619-.0037.3238.0553.3836.1659z;
                     M.8281.029c.1059.0675.1871.2564.1695.4453c-.0177.1844-.1377.3688-.2895.4588c-.1518.09-.3354.09-.4695-.0045c-.1341-.0945-.2224-.2834-.2365-.4678c-.0142-.1799.0459-.3553.1341-.4183c.0883-.063.2083-.009.3318-.0135c.1271-.0045.2542-.063.3601-0z;

@@ -1,6 +1,5 @@
 <template>
   <div class="max-w-[1024px] z-40 mx-auto">
-    <!-- Animated Header -->
     <div class="p-3 bg-gradient-to-r from-purple-600/20 to-blue-500/10 mt-10 mx-3 border-2 border-white/20 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 group">
       <h2 class="text-2xl font-bold text-center animate-text bg-gradient-to-r from-white via-amber-200 to-white bg-clip-text text-transparent">
         @gathogo's <span class="inline-block group-hover:rotate-12 transition-transform">✨</span> 4K Gallery <span class="inline-block group-hover:-rotate-12 transition-transform">✨</span>
@@ -89,7 +88,7 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
-import images from '../items'
+import {images} from '../items'
 const router = useRouter()
 
 const viewImage = (id) => {

@@ -1058,8 +1058,8 @@ figure {
 </style> -->
 
 <template>
-      <img class="w-[40px] absolute right-[20%] top-[30%] h-auto object-cover opacity-90" src="../assets/612260af10aa310004f39813.png"
-        alt="Background pattern" />
+  <!-- <img class="w-[40px] absolute right-[20%] top-[30%] h-auto object-cover opacity-90" src="../assets/612260af10aa310004f39813.png"
+        alt="Background pattern" /> -->
   <div class="relative scale-115 mb-10 md:scale-100 min-h-screen overflow-hidden  p-0">
     <!-- Animated Gradient Background -->
     <div class="absolute inset-0 overflow-hidden">
@@ -1077,7 +1077,7 @@ figure {
       }">
       </div>
     </div>
- 
+
 
     <!-- Phone Frame Container -->
     <div
@@ -1221,40 +1221,42 @@ figure {
           </div>
         </div>
 
-
-      </div>
-    </div><!-- Advanced Phone Home Indicator -->
-    <div class="absolute bottom-15 md:bottom-15 left-1/2 transform -translate-x-1/2 z-30 group">
-      <!-- Main Indicator with enhanced interactions -->
-      <div class="relative w-20 h-2 flex items-center justify-center cursor-pointer">
-        <!-- Base Bar with animated hover effects -->
-        <div class="absolute w-full h-1 bg-gray-600/80 rounded-full transition-all duration-300
+        <!-- Advanced Phone Home Indicator -->
+        <div class="absolute bottom-12 md:bottom-15 left-1/2 transform -translate-x-1/2 z-30 group">
+          <!-- Main Indicator with enhanced interactions -->
+          <div class="relative w-20 h-2 flex items-center justify-center cursor-pointer">
+            <!-- Base Bar with animated hover effects -->
+            <div class="absolute w-full h-1 bg-gray-600/80 rounded-full transition-all duration-300
                 group-hover:bg-gray-400 group-hover:h-1.5 group-hover:w-24
                 group-active:bg-white group-active:scale-90"></div>
 
-        <!-- Glow Effect (visible on hover) -->
-        <div class="absolute inset-0 bg-white/10 rounded-full opacity-0 blur-md
+            <!-- Glow Effect (visible on hover) -->
+            <div class="absolute inset-0 bg-white/10 rounded-full opacity-0 blur-md
                 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-        <!-- Touch Feedback Ripple Effect -->
-        <div class="absolute inset-0 rounded-full overflow-hidden">
-          <div class="absolute inset-0 bg-white/0 group-active:bg-white/20 
+            <!-- Touch Feedback Ripple Effect -->
+            <div class="absolute inset-0 rounded-full overflow-hidden">
+              <div class="absolute inset-0 bg-white/0 group-active:bg-white/20 
                   group-active:animate-ripple transition-all duration-500"></div>
-        </div>
+            </div>
 
-        <!-- Optional: Haptic Feedback Simulation (for mobile) -->
-        <div class="absolute inset-0 group-active:animate-vibrate"></div>
-      </div>
+            <!-- Optional: Haptic Feedback Simulation (for mobile) -->
+            <div class="absolute inset-0 group-active:animate-vibrate"></div>
+          </div>
 
-      <!-- Extended Functionality (hidden by default) -->
-      <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 opacity-0 
+          <!-- Extended Functionality (hidden by default) -->
+          <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 opacity-0 
               invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-        <div class="bg-gray-800/90 backdrop-blur-sm text-white text-xs py-1 px-2 rounded-md 
+            <div class="bg-gray-800/90 backdrop-blur-sm text-white text-xs py-1 px-2 rounded-md 
                 shadow-lg border border-gray-700 whitespace-nowrap">
-          Tap to go home
-        </div>
-        <div class="w-3 h-3 bg-gray-800/90 backdrop-blur-sm absolute -bottom-1 left-1/2 
+              Tap to go home
+            </div>
+            <div class="w-3 h-3 bg-gray-800/90 backdrop-blur-sm absolute -bottom-1 left-1/2 
                 transform -translate-x-1/2 rotate-45 border-r border-b border-gray-700"></div>
+          </div>
+        </div>
+
+
       </div>
     </div>
 
@@ -1422,7 +1424,7 @@ const shakeField = (fieldId, message) => {
 const socialLinks = [
   {
     icon: 'fab fa-github',
-    url: 'https://github.com/gathogo',
+    url: 'https://github.com/NicholasTechmoverai',
     color: '#9ca3af',
     secondaryColor: '#6e5494',
     name: 'GitHub'
@@ -1436,14 +1438,14 @@ const socialLinks = [
   },
   {
     icon: 'fab fa-twitter',
-    url: 'https://twitter.com/gathogo',
+    url: 'https://twitter.com/',
     color: '#9ca3af',
     secondaryColor: '#1DA1F2',
     name: 'Twitter'
   },
   {
     icon: 'fab fa-discord',
-    url: 'https://discord.com/users/gathogo',
+    url: 'https://discord.com/',
     color: '#9ca3af',
     secondaryColor: '#5865F2',
     name: 'Discord'

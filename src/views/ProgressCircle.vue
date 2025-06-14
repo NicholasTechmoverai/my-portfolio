@@ -2,7 +2,6 @@
   <div
     class="absolute top-[0%] left-0 pointer-events-none z-0 flex items-center justify-center w-full h-full opacity-35"
   >
-    <!-- Background Progress Circles - Enhanced Version -->
     <div class="relative w-full h-full flex items-center justify-center">
       <div
         class="absolute top-0 left-0 w-full h-full flex items-center justify-center z-0"
@@ -23,7 +22,6 @@
               cx="64"
               cy="64"
             />
-            <!-- Base circle -->
             <circle
               class="text-gray-700/30"
               stroke-width="10"
@@ -33,7 +31,6 @@
               cx="64"
               cy="64"
             />
-            <!-- Progress circle with gradient (rotated separately) -->
             <g transform="rotate(-90 64 64)">
               <circle
                 class="text-transparent transition-all duration-1000 ease-[cubic-bezier(0.65,0,0.35,1)]"
@@ -48,7 +45,6 @@
                 style="stroke: url(#progressGradient)"
               />
             </g>
-            <!-- Centered percentage text -->
             <text
               x="64"
               y="72"

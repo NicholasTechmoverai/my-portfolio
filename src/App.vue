@@ -1,6 +1,7 @@
 <script setup>
 import NavBar from './components/NavBar.vue';
 import icon from './assets/pxt1s38v.png'
+import WatchPage from './views/WatchPage.vue';
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -14,13 +15,13 @@ const scrollToTop = () => {
 <template>
   <NavBar />
   <div class="bg-gradient-to-br from-[#11161cfe] to-[#232224] min-h-[100vh] w-full flex flex-col items-center relative">
-    <img class="fixed top-0 left-0 w-full h-full object-cover opacity-10 z-0 pointer-events-none"
-      src="./assets/bck.jpg" alt="" />
+    <img class="fixed top-0 left-0 w-full h-full object-cover opacity-10 z-0 pointer-events-none" src="./assets/bck.jpg"
+      alt="" />
     <router-view />
-    <footer class="relative flex flex-col gap-10 bg-[#2c3e50]/70 w-full px-4 py-10 text-white overflow-hidden">
+    <footer class="relative flex flex-col gap-10 bg-[#2c3e50]/70 w-full px-4 py-5 text-white overflow-hidden">
       <!-- Animated background elements -->
-           <img class="absolute top-0 left-0 w-full h-full object-cover opacity-2 z-0 pointer-events-none"
-      src="./assets/istockphoto-1403644222-612x612.webp" alt="" />
+      <img class="absolute top-0 left-0 w-full h-full object-cover opacity-2 z-0 pointer-events-none"
+        src="./assets/istockphoto-1403644222-612x612.webp" alt="" />
       <div class="absolute inset-0 overflow-hidden">
         <div
           class="absolute -bottom-20 -left-20 w-40 h-40 bg-green-500/10 rounded-full filter blur-3xl animate-pulse-slow">
@@ -95,17 +96,16 @@ const scrollToTop = () => {
             <h4 class="text-xl font-bold text-white border-b border-green-500 pb-2 animate-slide-in-right">
               Quick Links
             </h4>
-              <div class="flex flex-col gap-2 mt-2 text-sm animate-fade-in" style="animation-delay: 0.3s">
-                <router-link to="/" class="hover:text-green-400 transition-colors hover:pl-2">Home</router-link>
-                <router-link to="/contact-me" class="hover:text-green-400 transition-colors hover:pl-2">Contact
-                  Me</router-link>
-                <router-link to="/skills" class="hover:text-green-400 transition-colors hover:pl-2">Skills</router-link>
-                <router-link to="/projects"
-                  class="hover:text-green-400 transition-colors hover:pl-2">Projects</router-link>
-                <router-link to="/gallery"
-                  class="hover:text-green-400 transition-colors hover:pl-2">Gallery</router-link>
-                <router-link to="/about" class="hover:text-green-400 transition-colors hover:pl-2">About</router-link>
-              </div>
+            <div class="flex flex-col gap-2 mt-2 text-sm animate-fade-in" style="animation-delay: 0.3s">
+              <router-link to="/" class="hover:text-green-400 transition-colors hover:pl-2">Home</router-link>
+              <router-link to="/contact-me" class="hover:text-green-400 transition-colors hover:pl-2">Contact
+                Me</router-link>
+              <router-link to="/skills" class="hover:text-green-400 transition-colors hover:pl-2">Skills</router-link>
+              <router-link to="/projects"
+                class="hover:text-green-400 transition-colors hover:pl-2">Projects</router-link>
+              <router-link to="/gallery" class="hover:text-green-400 transition-colors hover:pl-2">Gallery</router-link>
+              <router-link to="/about" class="hover:text-green-400 transition-colors hover:pl-2">About</router-link>
+            </div>
 
           </div>
 
@@ -160,12 +160,14 @@ const scrollToTop = () => {
       <div
         class="flex flex-col sm:flex-row justify-between border-t border-gray-500 mt-10 pt-4 text-xs text-gray-300 relative z-10 animate-fade-in"
         style="animation-delay: 0.5s">
-        <div class="mb-2 sm:mb-0 hover:text-white transition-colors">
+        <div class="mb-1 sm:mb-0 hover:text-white transition-colors">
           &copy; 2025 Kariuki Nicholas. All rights reserved.
         </div>
-        <div class="text-right text-[10px] whitespace-pre hover:text-white transition-colors">
-          Made: 04/2025
-          <span class="text-green-400">#Vue</span> <span class="text-blue-400">#TailwindCSS</span>
+        <div class="text-left text-[10px] whitespace-pre hover:text-white transition-colors">
+          <div>Made: 04/2025
+            <span class="text-green-400">#Vue</span> <span class="text-blue-400">#TailwindCSS</span>
+          </div>
+          <div>Made by <a href="/about">Kariuki Nicholas</a></div>
         </div>
       </div>
 

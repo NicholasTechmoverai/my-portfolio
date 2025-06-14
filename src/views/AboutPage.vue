@@ -136,7 +136,7 @@ export default {
           <div>
             <h2 class="text-2xl font-bold text-gray-900">Kariuki Nicholas</h2>
             <p class="text-sm text-gray-600 flex items-center gap-1">
-              <i class="fas fa-laptop-code text-indigo-600"></i> Full Stack Developer
+              <i class="fas fa-laptop-code text-indigo-600"></i> Full Stack Developer, Machine Learning
             </p>
           </div>
         </div>

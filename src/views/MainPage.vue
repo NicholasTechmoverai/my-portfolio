@@ -52,6 +52,7 @@ onMounted(() => {
     }
 
     currentIndex = (currentIndex + 1) % wordEls.length
+    console.log('current Index',currentIndex)
 
     const speed = Math.floor(Math.random() * 200 + 200)
     setTimeout(highlightNextWord, speed)

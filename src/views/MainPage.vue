@@ -95,7 +95,7 @@ onMounted(() => {
   <section
     class="relative w-[96%] max-w-[1150px] box-border md:mb-7 h-[70vh] max-h-[800px] md:h-[80vh] overflow-hidden mt-12 rounded-3xl m-5 border border-white/10">
     <!-- Background Image with Parallax -->
-    <img src="../assets/layered-waves-haikei.svg" alt="layered waves"
+    <img src="../assets/wave-haikei.svg" alt="layered waves"
       class="absolute inset-0 w-full h-full object-cover transform opacity-80 transition-transform duration-[10000ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
       data-speed="0.8" />
     <div class="absolute inset-0 overflow-hidden opacity-70">

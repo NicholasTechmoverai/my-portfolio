@@ -16,7 +16,15 @@
       class="custom-scroll max-w-[1024px] w-full mx-auto px-2 sm:px-4 bg-gray-100 dark:bg-gray-700/90 border border-gray-200 dark:border-gray-500 rounded-2xl shadow-lg p-4 sm:p-6 mb-6 transition-all duration-300 ease-in-out">
       <div class="mb-4 sm:mb-6 relative">
         <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">
-          {{ project.title }}
+          {{ project.title }} <a v-if="project.url" :href="project.url" target="_blank" rel="noopener noreferrer"
+            class="relative inline-flex items-center space-x-2 text-sm px-3 py-1 text-white bg-green-500 rounded hover:bg-green-600 transition duration-200">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
+            </span>
+            <span>Open Live</span>
+          </a>
+
         </h2>
         <p class="text-gray-700 dark:text-gray-300 mt-1 sm:mt-2 text-sm sm:text-base">
           {{ project.description }}

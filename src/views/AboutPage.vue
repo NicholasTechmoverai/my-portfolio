@@ -3,26 +3,24 @@ import mainImage from "../assets/image.png"
 export default {
   mounted() {
 
-
-    const models = [
-      {
-        name: "Who AM I",
-        description: "Born on Earth in 2003,Realized the're calling me 'Nicholas Kariuki' and my sir name was 'Gathogo' after little education realized i was somewhere in Nyandarua Kenya. Started tampering with my fathers electronics in the room as soon i could walk! yep that today makes me a 'Technologist' by proffesion!"
-      },
-      {
-        name: "highschool Background",
-        description: "Alumni Lanet secondary school Nakuru"
-      },
-      {
-        name: "Academic Background",
-        description: "About to Graduate(d) with a BSc in Computer Science, specializing in Machine Learning.Also a good skilled, experienced and proffsional fullstack developer"
-      },
-      {
-        name: "proffesion Background",
-        description: "A passionate and experienced programmer on frontend and web application development alongside with python in the backend."
-      },
-
-    ];
+const models = [
+  {
+    name: "About Me",
+    description: "I'm Nicholas Kariuki Gathogo — a technologist with strong practical experience in full-stack development and a deep interest in machine learning and AI. My journey in tech has been shaped by curiosity, continuous learning, and a passion for building impactful solutions through software."
+  },
+  {
+    name: "Academic Background",
+    description: "Currently completing a Bachelor of Science in Computer Science, with a focus on Machine Learning. My academic work is reinforced by real-world application through personal and professional development projects."
+  },
+  {
+    name: "Technical Experience",
+    description: "Skilled in modern web development frameworks, including Vue.js, React, and backend technologies like Python and FastAPI. I've built and deployed several full-stack applications, consistently focusing on performance, scalability, and clean architecture."
+  },
+  {
+    name: "Professional Focus",
+    description: "Driven by problem-solving and innovation, I specialize in building robust digital solutions — from dynamic UIs to intelligent backend systems. I also have experience with version control, DevOps basics, and collaborative workflows."
+  }
+];
 
 
     const list = document.getElementById("card-list");
@@ -150,10 +148,10 @@ export default {
             <i class="fas fa-user text-indigo-500 mr-2"></i>
             Gender: <span class="font-medium">Male</span>
           </p>
-          <p>
+          <!-- <p>
             <i class="fas fa-calendar-alt text-indigo-500 mr-2"></i>
             DOB: <span class="font-medium">20.11.2003</span>
-          </p>
+          </p> -->
           <p>
             <i class="fas fa-map-marker-alt text-indigo-500 mr-2"></i>
             Location: <span class="font-medium decoration-1 underline"><a

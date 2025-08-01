@@ -192,7 +192,7 @@ onMounted(() => {
 
             <!-- Info List -->
             <div class="mt-4 px-6 text-left space-y-3 text-[13px] tracking-wider [&_ion-icon]:text-purple-500">
-              <p><ion-icon name="calendar-outline"></ion-icon> 20.11.2003</p>
+              <p><ion-icon name="calendar-outline"></ion-icon> ...</p>
               <p>
                 <ion-icon name="code-slash-outline"></ion-icon> Software Engineer ||
                 Computer Technologist

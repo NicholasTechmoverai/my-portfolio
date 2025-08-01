@@ -1435,18 +1435,18 @@ const socialLinks = [
     name: 'LinkedIn'
   },
   {
-    icon: 'fab fa-twitter',
-    url: 'https://twitter.com/',
+    icon: 'fab fa-whatsapp',
+    url: 'https://wa.me/0741540233',
     color: '#9ca3af',
     secondaryColor: '#1DA1F2',
-    name: 'Twitter'
+    name: 'Whatsapp'
   },
   {
-    icon: 'fab fa-discord',
-    url: 'https://discord.com/',
+    icon: 'fab fa-instagram',
+    url: 'https://www.instagram.com/kariuki_g_nicholas',
     color: '#9ca3af',
     secondaryColor: '#5865F2',
-    name: 'Discord'
+    name: 'Instagram'
   }
 ]
 
